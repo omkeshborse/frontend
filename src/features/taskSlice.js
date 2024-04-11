@@ -45,10 +45,10 @@ export const getTasks = createAsyncThunk(
 );
 
 export const deleteTask = createAsyncThunk("tasks/delete",async (id, thunkAPI) => {
-  console.log(id);
+  // console.log(id);
   try {
     const token = thunkAPI.getState().auth.user.token;
-    console.log(token);
+    // console.log(token);
     return await taskService.deleteTask(id, token)
   } catch (error) {
     const message =

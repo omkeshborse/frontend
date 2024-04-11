@@ -9,9 +9,9 @@ function TaskItem({ task }) {
       <h2>{task.text}</h2>
       <button
         onClick={() => {
-            console.log("clccccccccc");
-          dispatch(deleteTask(task._id));
-          dispatch(getTasks())
+          dispatch(deleteTask(task._id)).then(() => {
+            dispatch(getTasks());
+          })
         }}
         className="close"
       >
